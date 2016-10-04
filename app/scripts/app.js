@@ -31,8 +31,7 @@ angular.module('Space3D', ['ionic', 'ngCordova', 'ngResource'])
       .state('app', {
         url: '/app',
         abstract: true,
-        templateUrl: 'templates/main.html',
-        controller: 'MainController'
+        templateUrl: 'templates/main.html'
       })
       .state('app.list', {
         url: '/list',
@@ -57,7 +56,7 @@ angular.module('Space3D', ['ionic', 'ngCordova', 'ngResource'])
 
 
     // redirects to default route for undefined routes
-    $urlRouterProvider.otherwise('/app/home');
+    $urlRouterProvider.otherwise('/app/list');
   });
 
 
