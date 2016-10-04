@@ -43,13 +43,13 @@ angular.module('Space3D', ['ionic', 'ngCordova', 'ngResource'])
           }
         }
       })
-      .state('app.settings', {
-        url: '/settings',
+      .state('app.image', {
+        url: '/image/:imageId',
         cache: true,
         views: {
           'viewContent': {
-            templateUrl: 'templates/views/settings.html',
-            controller: 'SettingsController'
+            templateUrl: 'templates/views/image.html',
+            controller: 'ImageController'
           }
         }
       });

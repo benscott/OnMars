@@ -1,8 +1,7 @@
 <ion-view>
-
     <ion-content>
         <ion-list>
-          <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="image in images" type="item-text-wrap" href="#/app/image/{{image.id}}">
+          <ion-item class="item-avatar item-icon-right" ng-repeat="image in images" type="item-text-wrap" href="#/app/image/{{image.id}}">
             <img ng-src="{{image.face}}">
             <h2>{{image.name}}</h2>
             <p>{{image.lastText}}</p>
@@ -10,5 +9,4 @@
           </ion-item>
         </ion-list>
     </ion-content>
-
 </ion-view>
