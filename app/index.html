@@ -14,7 +14,13 @@
 </head>
 <body ng-app="Space3D">
 
-<ion-nav-view></ion-nav-view>
+<a-scene>
+  <a-sky color="pink"></a-sky>
+  <a-entity geometry="primitive: sphere; radius: 1.5" material="color: tomato; metalness: 0.7"></a-entity>
+      <a-entity position="0 0 5.8">
+        <a-camera></a-camera>
+      </a-entity>  
+</a-scene>  
 
 <!-- inject:vendor:js --><!-- endinject -->
 <!-- inject:app:js --><!-- endinject -->

@@ -6,6 +6,10 @@ Virtual Reality Space Exploration
 
 https://github.com/tmaximini/generator-ionic-gulp
 
+## Aframe
+
+http://stackoverflow.com/questions/36911852/multiple-a-scene-using-canvas
+
 ### Stereoscopic
 
 https://github.com/oscarmarinmiro/aframe-stereo-component
