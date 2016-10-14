@@ -8,7 +8,7 @@
     "ngCordova": "~0.1.26-alpha",
     "angular-resource": "~1.5.3",
     "ionic": "~1.3.0",
-    "aframe": "0.2.0",
+    "aframe": "git://github.com/aframevr/aframe.git#b4541560bc87062a2c71254d64b0ded2040a934f",
     "aframe-stereo-component": "git@github.com:oscarmarinmiro/aframe-stereo-component.git"
   },
   "resolutions": {

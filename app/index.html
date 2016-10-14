@@ -14,13 +14,14 @@
 </head>
 <body ng-app="Space3D">
 
+
+
 <a-scene>
-  <a-sky color="pink"></a-sky>
-  <a-entity geometry="primitive: sphere; radius: 1.5" material="color: tomato; metalness: 0.7"></a-entity>
-      <a-entity position="0 0 5.8">
-        <a-camera></a-camera>
-      </a-entity>  
-</a-scene>  
+  <a-camera position="0 2 4">
+    <a-cursor color="#4CC3D9" fuse="true" timeout="10"></a-cursor>
+  </a-camera>
+ <a-sphere color="#F44336" radius="1" position="0 2 0"></a-sphere>
+</a-scene>
 
 <!-- inject:vendor:js --><!-- endinject -->
 <!-- inject:app:js --><!-- endinject -->
