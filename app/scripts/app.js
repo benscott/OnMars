@@ -16,9 +16,27 @@ angular.module('Space3D', ['ionic', 'ngCordova', 'ngResource'])
 
     $ionicPlatform.ready(function() {
       // save to use plugins here
-    });
+      // 
+    
+    // console.log(document.querySelector('a-scene'));
 
-    // add possible global event handlers here
+    // document.querySelector('a-assets').addEventListener('loaded', function(e){
+    //   console.log('loaded');
+    // });
+
+    // console.log(document.querySelector('a-assets'));
+
+    // document.querySelector('a-assets').addEventListener('timeout', function(e){
+    //   console.log('timeout');
+    // });    
+
+    // document.getElementById('sky1').addEventListener('loaded', function(e){
+    //   console.log('loaded scene-1');
+    // });    
+
+    
+
+    });
 
   })
 
@@ -28,35 +46,30 @@ angular.module('Space3D', ['ionic', 'ngCordova', 'ngResource'])
 
     // Application routing
     $stateProvider
-      .state('app', {
-        url: '/app',
-        abstract: true,
-        templateUrl: 'templates/main.html'
-      })
-      .state('app.list', {
-        url: '/list',
+      .state('home', {
+        url: '/',
         cache: true,
         views: {
           'viewContent': {
-            templateUrl: 'templates/views/list.html',
-            controller: 'ListController'
+            templateUrl: 'templates/views/home.html',
+            controller: 'HomeController'
           }
         }
       })
-      .state('app.image', {
-        url: '/image/:imageId',
+      .state('slides', {
+        url: '/slides',
         cache: true,
         views: {
           'viewContent': {
-            templateUrl: 'templates/views/image.html',
-            controller: 'ImageController'
+            templateUrl: 'templates/views/slides.html',
+            controller: 'SlidesController'
           }
         }
       });
-
+      // TODO - Add info/credits 
 
     // redirects to default route for undefined routes
-    $urlRouterProvider.otherwise('/app/list');
+    $urlRouterProvider.otherwise('/');
   });
 
 

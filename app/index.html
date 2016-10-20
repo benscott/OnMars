@@ -11,16 +11,68 @@
     <!-- inject:app-styles:css --><!-- endinject -->
     <!-- uncomment if using your own iconfont -->
     <!-- <link rel="stylesheet" href="styles/own-icons.css"> -->
+
+
+
 </head>
 <body ng-app="Space3D">
 
+<!-- TODO: Arrows. Static? -->
 
+<a-scene scene-switcher>
+  <a-assets>
+<!--     <img id="scene-1" src="/images/PANO_20140705_mars1.jpg" preload="auto">
+    <img id="scene-2" src="/images/PANO_20150101_stars.jpg" preload="auto">
+    <img id="scene-3" src="/images/PANO_Dione_moon_color.jpg" preload="auto">
+    <img id="scene-4" src="/images/PANO_Enceladus2_ps.jpg" preload="auto"> -->
+  </a-assets>
 
-<a-scene>
-  <a-camera position="0 2 4">
-    <a-cursor color="#4CC3D9" fuse="true" timeout="10"></a-cursor>
-  </a-camera>
- <a-sphere color="#F44336" radius="1" position="0 2 0"></a-sphere>
+<!--   <a-camera position="0 0 0">
+      <a-cursor color="black"></a-cursor>
+  </a-camera>   -->
+
+<!--   <a-sky class="scene-1" color="red" visible="true"></a-sky>
+  <a-sky class="scene-2" color="pink" visible="false"></a-sky> -->
+
+  <!-- <a-sky class="scene-3" radius="5000" src="#scene-3-left" stereo="eye:left" visible="false"></a-sky> -->
+  <!-- <a-sky class="scene-3" radius="5000" src="#scene-3-right" stereo="eye:right" visible="false"></a-sky> -->
+
+  <!-- <a-sphere color="yellow" position="0 0 0" radius="1"></a-sphere> -->
+  <!-- <a-box color="#6173F4" depth="2" height="400"></a-box> -->
+
+  <a-camera position="0 1.8 3" cursor-visible="false" stereocam="eye:right;"></a-camera>
+  
+  <a-entity position="-1.5 3 0">
+    <a-entity bmfont-text="text: Comparison of Three Species of Iris"></a-entity>
+  </a-entity>  
+        
+<!--   <a-sky color="black" visible="true" rotation="0 0 0">
+    <a-box color="#6173F4" opacity="1" depth="2" position="0 1 0"></a-box>
+    <a-entity bmfont-text="text: Hello World;" position="0 1 1"></a-entity>      
+  </a-sky>
+  <a-entity bmfont-texts="text: Hello World;"></a-entity> -->
+
+<!--   <a-sky src="#scene-4" visible="false">
+    <a-box color="#6173F4" opacity="1" depth="2" position="0 1 0"></a-box>
+  </a-sky>
+  <a-sky id="sky1" src="#scene-3" visible="false"></a-sky>
+  <a-sky src="#scene-2" visible="false"></a-sky> -->
+
+<!--   <a-sky opacity="0" transparent="true" visible="false">
+    <a-sphere stereo="eye:left" radius="5000" segmentsWidth="64" segmentsHeight="64" color="red"></a-sphere>
+    <a-sphere stereo="eye:right" radius="5000" segmentsWidth="64" segmentsHeight="64" color="yellow"></a-sphere>
+    <a-box color="#6173F4" opacity="1" depth="2" position="0 1 0"></a-box>
+  </a-sky> -->
+
+  <!-- <a-camera position="0 0 10" cursor-visible="false"></a-camera>       -->
+
+<!--   <a-sky transparent="true">
+TODO: Test if positioned in one it shows in both.
+    <a-sphere src="#scene-3-left" stereo="eye:left" radius="5000" segmentsWidth="64" segmentsHeight="64" scale="-1 1 1" rotation="0 -60 0">
+    </a-sphere>
+    <a-sphere src="#scene-3-right" stereo="eye:right" radius="5000" segmentsWidth="64" segmentsHeight="64" scale="-1 1 1" rotation="0 -60 0"></a-sphere>
+  </a-sky> -->
+
 </a-scene>
 
 <!-- inject:vendor:js --><!-- endinject -->
