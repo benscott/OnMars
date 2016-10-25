@@ -1,0 +1,9 @@
+README.rst
+setup.py
+image_optim/__init__.py
+image_optim/api.py
+image_optim.egg-info/PKG-INFO
+image_optim.egg-info/SOURCES.txt
+image_optim.egg-info/dependency_links.txt
+image_optim.egg-info/requires.txt
+image_optim.egg-info/top_level.txt
