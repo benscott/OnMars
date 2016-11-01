@@ -17,7 +17,9 @@
 
 <!-- inject:vendor:js --><!-- endinject -->
 
-<a-scene antialias='true' scene-switcher stats>
+
+
+<a-scene antialias='false' scene-switcher>
 
 <!-- Assets -->
   <a-assets>
@@ -25,8 +27,9 @@
     <!-- 3D Scenes -->
     <img id="scene-0" src="/images/scenes/eso0932a.jpg" preload="auto">
     <img id="scene-1" src="/images/scenes/PANO_20150101_stars.jpg" preload="auto">
-    <img id="scene-2-left" src="/images/scenes/PANO_20140705_mars1.jpg" preload="auto">
-    <img id="scene-2-right" src="/images/scenes/PANO_Enceladus2_ps.jpg" preload="auto">
+    <img id="scene-2-left" src="/images/scenes/174948main_LEFT-RED-South-Pole-304.jpg" preload="auto">
+    <img id="scene-2-right" src="/images/scenes/174953main_RIGHT-RED-South-Pole-304.jpg" preload="auto">    
+    <img id="scene-3" src="/images/scenes/PANO_20140705_mars1.jpg" preload="auto">
 
     <!-- Markers -->
     <img id="marker-1" src="/images/markers/1.png" preload="auto">
@@ -41,8 +44,11 @@
     <!-- Info point template -->
     <script id="info-point-tpl" type="text/handlebars">
       <a-entity info-point>
-        <a-image src="#marker-{{ num }}" class="info-point-trigger" width="0.3" height="0.3"></a-image>
-        <a-entity class="info-point-text" position="-1 0.5 0" scale="1 1 -1" bmfont-text="text: {{ text }}; width: 400; color: #fff; lineHeight: 42; opacity:0; fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png; align: center">
+<!-- <a-entity geometry="primitive: ring; radiusInner: 0.05; radiusOuter: 0.056" material="color: #EEE" position="0 0 -1">
+  <a-entity position="-0.04 -0.02 0" scale="0.4 0.4 0.4" bmfont-text="text: 1; width: 40; color: #fff; lineHeight: 42; fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png; align: center"></a-entity> 
+</a-entity>   -->    
+        <a-image class="info-point-trigger" src="#marker-{{ num }}"  width="0.1" height="0.1"></a-image>
+        <a-entity class="info-point-text" position="-0.3 0.12 0" scale="0.4 0.4 0.4" bmfont-text="text: {{ text }}; width: 300; color: #fff; lineHeight: 42; opacity:0; fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png; align: center">
           <a-animation begin="showInfo" attribute="bmfont-text.opacity" dur="500" fill="forwards" to="1" repeat="0"></a-animation>
           <a-animation begin="hideInfo" attribute="bmfont-text.opacity" dur="200" to="0" repeat="0"></a-animation>
         </a-entity>         
@@ -57,36 +63,85 @@
   <!-- End of assets -->
 
     <!-- Camera -->
-  <a-entity position="0 -1 3">
-    <a-entity camera look-controls wasd-controls mouse-cursor stereocam="eye:left;">
-        <a-entity cursor geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.016" material="color: #EEE" position="0 0 -1"></a-entity>
+  <a-entity position="0 0 0">
+    <a-entity camera look-controls wasd-controls mouse-cursor stereocam="eye:left;" viewport="maxyaw:20;maxpitch:70">
+        <a-entity id="cursor" cursor geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.016" material="color: #EEE" position="0 0 -1"></
+<!--           <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
+          <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" fill="forwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation> -->
+      <a-entity>
       </a-entity>      
     </a-entity>
   </a-entity>
 
-  <a-sky data-scene="0" src="#scene-0" mixin="sky" visible="true"></a-sky>
-  <a-entity data-scene="0" position="0 0.3 0">
+<!--   <a-sky data-scene="0" src="#scene-0" mixin="sky" visible="true"></a-sky>
+  <a-entity data-scene="0" position="0 -1 0">
     <a-image id="webvr" src="#logo" width="3" height="0.5" scale="0.75 0.75 0.75"></a-image>
     <a-entity position="-1 -0.5 0" scale="0.8 0.8 -1" bmfont-text="text: Dr. Peter Grindrod; color: #fff; lineHeight: 42; align: center; width: 500;fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png"></a-entity>   
-  </a-entity>
+  </a-entity> -->
 
-  
-
-
-
-
-
-  <!-- Scene 0 -->
-<!--   <a-sky data-scene="0" src="#scene-0" visible="true" mixin="sky"></a-sky>
-  <a-entity data-scene="0" position="-2 2 -1" mixin="info-point" data-text="Hello world" data-num="1" visible="true"></a-entity>
-  <a-entity data-scene="0" position="2 3 -1" mixin="info-point" data-text="Comparison of Three Species of Iris Comparison of Three Species of Iris" data-num="2" visible="true"></a-entity>   -->
-
-  <a-sky data-scene="1" src="#scene-1" mixin="sky"></a-sky>
+<!--   <a-sky data-scene="1" src="#scene-1" mixin="sky"></a-sky>
   <a-entity data-scene="1" position="-3 2 -1" mixin="info-point" data-text="Hello world" data-num="1"></a-entity>
+  <a-entity data-scene="1" position="2 3 -1" mixin="info-point" data-text="Comparison of Three Species of Iris Comparison of Three Species of Iris" data-num="2" visible="true"></a-entity> -->
 
-<!--   <a-sky data-scene="2" src="#scene-2-left" stereo="eye:left" mixin="sky"></a-sky>
-  <a-sky data-scene="2" src="#scene-2-right" stereo="eye:right" mixin="sky"></a-sky> 
-  <a-entity data-scene="2" position="-2 3 -1" mixin="info-point" data-text="BLAH BLAH BLAH" data-num="1"></a-entity> -->
+  <!-- <a-sky data-scene="0" src="#scene-2-left" stereo="eye:left" mixin="sky" visible="true"></a-sky> -->
+  <!-- <a-sky data-scene="0" src="#scene-2-right" stereo="eye:right" mixin="sky" visible="true"></a-sky>  -->
+<!--   <a-entity data-scene="2" position="-2 3 -1" mixin="info-point" data-text="BLAH BLAH BLAH" data-num="1"></a-entity> -->
+
+  <!-- <a-sky data-scene="3" src="#scene-3" mixin="sky"></a-sky> -->
+
+  <!-- <a-sky data-scene="0" src="#scene-3" theta-length="180" theta-start="90"></a-sky> -->
+
+  <!-- <a-entity geometry="primitive: sphere; thetaLength: 100; radius: 5000; segmentsWidth: 64; segmentsHeight: 20" scale="1 1 -1" material="src: #scene-2-left; shader: flat"></a-entity> -->
+
+  <!-- <a-curvedimage src="#scene-2-left" open-ended="true" theta-length="180" side="back"></a-curvedimage> -->
+
+<!-- <a-curvedimage src="#scene-2-left" height="100" radius="60" rotation="0 0 0" stereo="eye:left"></a-curvedimage>                
+<a-curvedimage src="#scene-2-right" height="100" radius="60" rotation="0 0 0" stereo="eye:right"></a-curvedimage> 
+
+
+
+<a-entity cursor geometry="primitive: ring; radiusInner: 0.05; radiusOuter: 0.056" material="color: #EEE" position="1 0 -1">
+  <a-entity position="-0.04 -0.02 0" scale="0.4 0.4 0.4" bmfont-text="text: 2; width: 40; color: #fff; lineHeight: 42; fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png; align: center"></a-entity> 
+</a-entity>
+
+<a-entity cursor geometry="primitive: ring; radiusInner: 0.05; radiusOuter: 0.056" material="color: #EEE" position="-1 0 -1">
+  <a-entity position="-0.04 -0.02 0" scale="0.4 0.4 0.4" bmfont-text="text: 3; width: 40; color: #fff; lineHeight: 42; fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png; align: center"></a-entity> 
+</a-entity> -->
+
+<!-- TODO: It's much faster to just use images!!!! -->
+
+<!-- <a-image src="#marker-1" class="info-point-trigger" width="0.3" height="0.3" position="0 0 -1"></a-image>
+<a-image src="#marker-2" class="info-point-trigger" width="0.3" height="0.3" position="1 0 -1"></a-image>
+<a-image src="#marker-3" class="info-point-trigger" width="0.3" height="0.3" position="-1 0 -1"></a-image> -->
+
+  <!-- <a-sphere theta-length="180" src="#scene-2-left"> -->
+
+
+
+
+<!--       <a-entity geometry="primitive: sphere;
+                      radius: 100;
+                      segmentsWidth: 64;
+                      segmentsHeight: 64;"
+              material="shader: flat; src:#scene-2-left;"
+              scale="-1 1 1" stereo="eye:left">
+      </a-entity>
+
+      <a-entity geometry="primitive: sphere;
+                      radius: 100;
+                      segmentsWidth: 64;
+                      segmentsHeight: 64;"
+              material="shader: flat; src:#scene-2-right;"
+              scale="-1 1 1" stereo="eye:right"> -->
+
+
+<a-curvedimage src="#scene-2-left" height="120" radius="60" rotation="0 45 0" stereo="eye:left"></a-curvedimage>                
+<a-curvedimage src="#scene-2-right" height="120" radius="60" rotation="0 45 0" stereo="eye:right"></a-curvedimage>    
+
+<a-entity position="0.2 0 -1" mixin="info-point" data-text="Blah Blah Blah Blah" data-num="1" visible="true"></a-entity>
+<a-entity position="-0.2 0.2 -1" mixin="info-point" data-text="Blah Blah" data-num="2" visible="true"></a-entity>
+
+  <!-- <a-sky src="#scene-2-left"></a-sky>                   -->
 
 </a-scene>
 
