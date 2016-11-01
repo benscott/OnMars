@@ -30,6 +30,10 @@ https://medium.com/samsung-internet-dev/optimising-a-frame-assets-for-faster-sta
 
 http://codepen.io/bryik/pen/XKWgvK
 
+### 3D Images
+
+http://stackoverflow.com/questions/37039248/aframe-how-to-import-google-cardboard-created-images/37062886#37062886
+
 
 ### Extras?
 
@@ -37,6 +41,9 @@ Scan this to view the virtual tour on your mobile device. - http://vrviewer.ista
 
 https://github.com/aframevr/aframe/issues/1023
 One way we did before is to create a black mask entity that fades in when transitioning, and you change the scene during the transition.
+
+https://github.com/nylki/aframe-fit-texture-component
+
 
 
 ### Museum
@@ -48,7 +55,13 @@ http://almossawi.com/aframe-d3-visualization/demo/
 
 
 
-
+    <a-entity id="ip1" position="-2 3 -1" look-at="[camera]" info-point>
+      <a-cylinder class="info-point-trigger" color="red" height="0.01" radius="0.2" rotation="-90 0 0"></a-cylinder>        
+      <a-entity class="info-point-text" position="-0.8 0.5 0" scale="0.8 0.8 -1" bmfont-text="text: Comparison of Three Species of Iris Comparison of Three Species of Iris; width: 500; color: #fff; lineHeight: 42; opacity:0">
+        <a-animation begin="showInfo" attribute="bmfont-text.opacity" dur="500" fill="forwards" to="1" repeat="0"></a-animation>
+        <a-animation begin="hideInfo" attribute="bmfont-text.opacity" dur="200" to="0" repeat="0"></a-animation>
+      </a-entity>
+    </a-entity>    
 
     <a-entity id="ip2" position="4 2 0" look-at="[camera]" info-point>
       <a-cylinder class="info-point-trigger" color="red" height="0.01" radius="0.2" rotation="-90 0 0"></a-cylinder>        
