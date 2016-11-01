@@ -1,14 +1,17 @@
 AFRAME.registerComponent('info-point', {
   schema: {
     on: { default: 'mouseenter'},
-    // off: { default: 'hover' },
+    off: { default: 'mouseleave'},
     visible: { default: false}
   },
   init: function () {
+    this.textEl = this.el.getElementsByClassName("info-point-text")[0];
     // Attach event listener for when user's gaze lands on info point
     // We need to wait until child-attached event fires rather than on init() 
     // As we're using templates that only get rendered on scene view 
-    this.el.getElementsByClassName("info-point-trigger")[0].addEventListener(this.data.on, this.showInfo.bind(this));          
+    this.el.getElementsByClassName("info-point-trigger")[0].addEventListener(this.data.on, this.showInfo.bind(this));
+    // Mouse leave only works on cursor element - not trigger
+    document.getElementById('cursor').addEventListener(this.data.off, this.hideInfo.bind(this)); 
   },
   /**
    * Show info text
@@ -16,7 +19,7 @@ AFRAME.registerComponent('info-point', {
   showInfo: function (){
     if(!this.isVisible()){
       this.hideAll(); 
-      this.el.getElementsByClassName("info-point-text")[0].emit('showInfo');      
+      this.textEl.emit('showInfo');      
     }
     this.data.visible = true;
   },
@@ -25,7 +28,7 @@ AFRAME.registerComponent('info-point', {
    */
   hideInfo: function (){  
     if(this.isVisible()){
-      this.el.getElementsByClassName("info-point-text")[0].emit('hideInfo');      
+      this.textEl.emit('hideInfo');      
     }
     this.data.visible = false;
   },  
