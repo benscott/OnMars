@@ -38,38 +38,6 @@ angular.module('Space3D', ['ionic', 'ngCordova', 'ngResource'])
 
     });
 
-  })
-
-  .config(function($httpProvider, $stateProvider, $urlRouterProvider) {
-    // register $http interceptors, if any. e.g.
-    // $httpProvider.interceptors.push('interceptor-name');
-
-    // Application routing
-    $stateProvider
-      .state('home', {
-        url: '/',
-        cache: true,
-        views: {
-          'viewContent': {
-            templateUrl: 'templates/views/home.html',
-            controller: 'HomeController'
-          }
-        }
-      })
-      .state('slides', {
-        url: '/slides',
-        cache: true,
-        views: {
-          'viewContent': {
-            templateUrl: 'templates/views/slides.html',
-            controller: 'SlidesController'
-          }
-        }
-      });
-      // TODO - Add info/credits 
-
-    // redirects to default route for undefined routes
-    $urlRouterProvider.otherwise('/');
   });
 
 
