@@ -44,6 +44,8 @@ One way we did before is to create a black mask entity that fades in when transi
 
 https://github.com/nylki/aframe-fit-texture-component
 
+Look down controls?
+https://github.com/googlevr/gvr-unity-sdk/tree/master/Samples/CardboardDesignLab
 
 
 ### Museum

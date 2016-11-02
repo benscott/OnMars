@@ -16,7 +16,8 @@
     "aframe-bmfont-text-component": "git@github.com:bryik/aframe-bmfont-text-component.git",
     "aframe-look-at-component": "git@github.com:ngokevin/aframe-look-at-component.git",
     "aframe-template-component": "git@github.com:ngokevin/aframe-template-component.git",
-    "aframe-viewable-component": "git@github.com:benscott/aframe-viewable-component.git"
+    "aframe-viewable-component": "git@github.com:benscott/aframe-viewable-component.git",
+    "aframe-fit-texture-component": "git@github.com:nylki/aframe-fit-texture-component.git"
   },
   "resolutions": {
     "angular": "1.5.3"
@@ -42,6 +43,9 @@
     },
     "aframe-viewable-component": {
       "main": "dist/aframe-viewable-component.min.js"
-    }       
+    },
+    "aframe-fit-texture-component": {
+      "main": "dist/aframe-fit-texture-component.min.js"
+    }     
   }
 }
