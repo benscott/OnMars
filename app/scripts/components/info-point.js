@@ -8,7 +8,6 @@ AFRAME.registerComponent('info-point', {
     hideTimeoutMS: { default: 600}
   },
   init: function () {
-    console.log('init');
     this.textEl = this.el.getElementsByClassName('info-point-text')[0];
     // Timeout for hiding 
     this.hideTimeout = null;
@@ -22,6 +21,9 @@ AFRAME.registerComponent('info-point', {
       clearTimeout(this.hideTimeout);
       this.hideTimeout = setTimeout(function(){ this.hideInfo(); }.bind(this), this.data.hideTimeoutMS);
     }.bind(this));
+  },
+  update: function () {
+    console.log('update');
   },
   /**
    * Show info text
