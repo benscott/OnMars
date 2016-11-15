@@ -1,0 +1,373 @@
+
+ARSE
+
+<a-scene antialias='false' slide-show>
+
+<!-- Assets -->
+  <a-assets>
+
+    <!-- 3D Scenes -->
+    <img id="scene-0" src="/images/scenes/eso0932a.jpg" preload="auto">
+    <img id="scene-1" src="/images/scenes/PANO_20150101_stars.jpg" preload="auto">
+    <img id="scene-2-left" src="/images/scenes/174948main_LEFT-RED-South-Pole-304.jpg" preload="auto">
+    <img id="scene-2-right" src="/images/scenes/174953main_RIGHT-RED-South-Pole-304.jpg" preload="auto">    
+    <img id="scene-3" src="/images/scenes/PANO_20140705_mars1.jpg" preload="auto">
+
+    <!-- Markers -->
+    <img id="marker-1" src="/images/markers/1.png" preload="auto">
+    <img id="marker-2" src="/images/markers/2.png" preload="auto">
+    <img id="marker-3" src="/images/markers/3.png" preload="auto">
+    <img id="marker-4" src="/images/markers/4.png" preload="auto">
+    <img id="marker-5" src="/images/markers/5.png" preload="auto">
+
+    <!-- Markers -->
+    <img id="logo" src="/images/logo.png" preload="auto">
+
+    <!-- Info point template -->
+    <script id="info-point-tpl" type="text/handlebars">
+      <a-entity info-point>
+        <a-image class="info-point-trigger" src="#marker-{{ num }}"  width="0.18" height="0.18"></a-image>
+        <a-entity class="info-point-text" position="-0.5 0.2 0" scale="0.5 0.5 0.5" bmfont-text="text: {{ text }}; width: 400; color: #fff; lineHeight: 42; opacity:0; fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png; align: center">
+          <a-animation begin="showInfo" attribute="bmfont-text.opacity" dur="500" fill="forwards" to="1" repeat="0"></a-animation>
+          <a-animation begin="hideInfo" attribute="bmfont-text.opacity" dur="200" to="0" repeat="0"></a-animation>
+        </a-entity>         
+      </a-entity>
+    </script>
+
+    <!-- Mixins -->
+    <a-mixin id="info-point" template="src: #info-point-tpl; type: handlebars" look-at="[camera]"></a-mixin>
+    <a-mixin id="sky" radius="80" segments-width="10"></a-mixin>
+
+  </a-assets>
+  <!-- End of assets -->
+
+  <!-- <a-entity position="-2 0 1" mixin="info-point" data-text="Blah Blah Blah Blah" data-num="1"></a-entity> -->
+
+  <a-entity visible="true" class="slide">
+    <a-sky src="#scene-0" mixin="sky"></a-sky>
+    <a-entity position="0 0 0" look-at="[camera]">
+      <a-image src="#logo" width="2.5" height="0.4" scale="0.75 0.75 0.75">
+            <a-animation attribute="scale" from="0.75 0 0.75" to="0.75 0.75 0.75" delay="1000" dur="200" fill="both" easing="ease-out"></a-animation>
+            <a-animation attribute="position" from="0 -3 0" to="0 0 0" delay="500" dur="1000" fill="both" easing="ease-out"></a-animation>      
+      </a-image>
+      <a-entity position="-0.9 -0.4 0" scale="0.7 0.7 0.7" bmfont-text="text: Dr. Peter Grindrod; color: #fff; lineHeight: 42; align: center; width: 500;fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png">
+        <a-animation attribute="scale" from="0.7 0 0.7" to="0.7 0.7 0.7" delay="1200" dur="200" fill="both" easing="ease-out"></a-animation>
+      </a-entity>   
+    </a-entity>
+  </a-entity>
+
+  <a-entity class="slide" visible="false">
+    <a-sky src="#scene-1" mixin="sky"></a-sky>
+    <a-entity position="-2 0 1" mixin="info-point" data-text="Blah Blah Blah Blah" data-num="1"></a-entity>
+    <a-entity position="-0 1 0" mixin="info-point" data-text="Blah Blah" data-num="2"></a-entity>     
+  </a-entity>
+
+  <a-entity class="slide" visible="false">
+    <a-curvedimage src="#scene-2-left" height="120" radius="50" rotation="0 45 0" stereo="eye:left"></a-curvedimage>
+    <a-curvedimage src="#scene-2-right" height="120" radius="60" rotation="0 45 0" stereo="eye:right"></a-curvedimage>    
+    <a-entity position="-1 0 1" mixin="info-point" data-text="Blah Blah Blah Blah" data-num="1"></a-entity>
+    <a-entity position="1 1 0" mixin="info-point" data-text="Blah Blah" data-num="2"></a-entity>     
+  </a-entity>
+
+  <a-entity class="slide" visible="false">
+   <a-sky src="#scene-3" mixin="sky"></a-sky>
+    <a-entity position="-1 0 1" mixin="info-point" data-text="Blah Blah Blah Blah" data-num="1"></a-entity>
+    <a-entity position="-1 1 0" mixin="info-point" data-text="Blah Blah" data-num="2"></a-entity>     
+  </a-entity>
+
+<!--      <a-entity camera look-controls wasd-controls mouse-cursor stereocam="eye:left;" position="0 0 0">
+       <a-entity cursor geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.016" material="color: #EEE" position="0 0 -1"></a-entity>      
+     </a-entity> -->
+
+
+
+<!--   <a-entity position="0 0 0">
+
+   </a-entity>   -->
+
+  <a-sky src="#scene-3" id="sky1" position="0 0 0" rotation="0 0 0"></a-sky>
+  <a-sky src="#scene-0" visible="false" id="sky2" position="0 0 0" rotation="0 0 0"></a-sky>
+
+<!--   <a-entity camera position="0 0 2" rotation="0 0 0" mouse-cursor look-controls stereocam="eye:left">
+  </a-entity> -->
+  <a-entity camera look-controls wasd-controls mouse-cursor stereocam="eye:left;" position="0 0 0">
+
+
+</a-scene>
+
+
+
+
+
+
+
+
+
+    <!-- Camera -->
+<!--     <a-entity position="0 -.05 0">
+      <a-entity camera look-controls wasd-controls mouse-cursor stereocam="eye:left;">
+          <a-entity id="cursor" cursor geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.016" material="color: #EEE" position="0 0 -1"></
+            <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
+            <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" fill="forwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
+        <a-entity>
+        </a-entity>      
+      </a-entity>
+    </a-entity> -->
+
+<!--       <a-entity position="0 -0.5 3.8">
+        <a-entity camera look-controls wasd-controls mouse-cursor stereocam="eye:left;">
+          <a-entity geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.016" material="color: #EEE">
+
+          <a-entity>             
+        </a-entity>     
+      </a-entity>
+ -->
+
+
+
+
+  <!-- <a-sky data-scene="0" src="#scene-2-left" stereo="eye:left" mixin="sky" visible="true"></a-sky> -->
+  <!-- <a-sky data-scene="0" src="#scene-2-right" stereo="eye:right" mixin="sky" visible="true"></a-sky>  -->
+<!--   <a-entity data-scene="2" position="-2 3 -1" mixin="info-point" data-text="BLAH BLAH BLAH" data-num="1"></a-entity> -->
+
+  <!-- <a-sky data-scene="3" src="#scene-3" mixin="sky"></a-sky> -->
+
+  <!-- <a-sky data-scene="0" src="#scene-3" theta-length="180" theta-start="90"></a-sky> -->
+
+  <!-- <a-entity geometry="primitive: sphere; thetaLength: 100; radius: 5000; segmentsWidth: 64; segmentsHeight: 20" scale="1 1 -1" material="src: #scene-2-left; shader: flat"></a-entity> -->
+
+  <!-- <a-curvedimage src="#scene-2-left" open-ended="true" theta-length="180" side="back"></a-curvedimage> -->
+
+<!-- <a-curvedimage src="#scene-2-left" height="100" radius="60" rotation="0 0 0" stereo="eye:left"></a-curvedimage>                
+<a-curvedimage src="#scene-2-right" height="100" radius="60" rotation="0 0 0" stereo="eye:right"></a-curvedimage> 
+
+
+
+<a-entity cursor geometry="primitive: ring; radiusInner: 0.05; radiusOuter: 0.056" material="color: #EEE" position="1 0 -1">
+  <a-entity position="-0.04 -0.02 0" scale="0.4 0.4 0.4" bmfont-text="text: 2; width: 40; color: #fff; lineHeight: 42; fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png; align: center"></a-entity> 
+</a-entity>
+
+<a-entity cursor geometry="primitive: ring; radiusInner: 0.05; radiusOuter: 0.056" material="color: #EEE" position="-1 0 -1">
+  <a-entity position="-0.04 -0.02 0" scale="0.4 0.4 0.4" bmfont-text="text: 3; width: 40; color: #fff; lineHeight: 42; fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png; align: center"></a-entity> 
+</a-entity> -->
+
+<!-- TODO: It's much faster to just use images!!!! -->
+
+<!-- <a-image src="#marker-1" class="info-point-trigger" width="0.3" height="0.3" position="0 0 -1"></a-image>
+<a-image src="#marker-2" class="info-point-trigger" width="0.3" height="0.3" position="1 0 -1"></a-image>
+<a-image src="#marker-3" class="info-point-trigger" width="0.3" height="0.3" position="-1 0 -1"></a-image> -->
+
+  <!-- <a-sphere theta-length="180" src="#scene-2-left"> -->
+
+
+
+
+<!--       <a-entity geometry="primitive: sphere;
+                      radius: 100;
+                      segmentsWidth: 64;
+                      segmentsHeight: 64;"
+              material="shader: flat; src:#scene-2-left;"
+              scale="-1 1 1" stereo="eye:left">
+      </a-entity>
+
+      <a-entity geometry="primitive: sphere;
+                      radius: 100;
+                      segmentsWidth: 64;
+                      segmentsHeight: 64;"
+              material="shader: flat; src:#scene-2-right;"
+              scale="-1 1 1" stereo="eye:right"> -->
+
+<!-- <a-image position="0 0 0" src="#scene-2-left"></a-image> -->
+
+
+
+
+'use strict';
+
+AFRAME.registerComponent('slide-show', {
+  schema: {
+    on: { default: 'click' }
+  },
+  init: function () {
+    this.slides = document.getElementsByClassName("slide");
+    // this.el.addEventListener(this.data.on, this.next.bind(this));
+    this.camera = document.querySelector('a-entity[camera]');
+    this.cameraEl = document.getElementById('cameraWrapper');
+
+    var sky1 = document.getElementById('sky1');
+    var sky2 = document.getElementById('sky2');
+
+    
+
+
+    this.el.addEventListener(this.data.on, function(e){
+
+      // http://stackoverflow.com/questions/16525043/reset-camera-using-orbitcontrols-js
+
+      console.log("CLICK");
+      // console.log(this.camera.components['look-controls'].pitchObject)
+
+      // var scene = document.querySelector('a-scene');
+
+      // this.cameraEl.setAttribute('position',  '0 0 0');
+      // this.cameraEl.setAttribute('rotation',  '0 0 0');
+      // this.camera.setAttribute('look-controls', {enabled: false})
+      // this.camera.setAttribute('position',  '0 0 0');
+      // this.camera.setAttribute('rotation',  '0 0 0');
+      // this.camera.setAttribute('look-controls', {enabled: true})
+      // this.cameraEl.setAttribute('position',  '0 0 0');
+      // // this.camera.setAttribute('look-controls', {enabled: false})
+      
+      // console.log();
+
+      sky1.setAttribute('visible', !sky1.getAttribute('visible'));
+      // this.cameraEl.setAttribute('rotation', '0 0 0');
+      
+
+      // this.camera.setAttribute('rotation',  '0 0 0');   
+      sky2.setAttribute('visible', !sky1.getAttribute('visible'));
+      this.camera.setAttribute('rotation',  '0 0 0');
+
+      // this.camera.setAttribute ('look-controls-enabled',"false")
+      
+      // console.log(this.camera.object3D);
+      // this.camera.object3D.matrixAutoUpdate=false; 
+      // this.camera.object3D.rotation.x= 0;
+      // this.camera.object3D.rotation.y= 0;
+      // this.camera.object3D.updateMatrix();   
+      // this.camera.object3D.matrixAutoUpdate=true;    
+      // this.camera.object3D.updateMatrix();   
+      // 
+      // this.camera.object3D.matrixAutoUpdate=true; 
+      // this.camera.setAttribute ('look-controls-enabled',"true")
+
+
+      // this.camera.components['look-controls'].setAttribute('rotation',  '0 0 0');
+      // this.camera.setAttribute('look-controls', {enabled: true})
+
+      // var lc = this.camera.components['look-controls'];
+      // // // lc.pitchObject = new THREE.Object3D();
+      // // // lc.pitchObject.rotation.set(45,0,0);
+      // // // lc.yawObject.rotation.set(0,0,0);
+      // lc.controls.update();
+      // lc.updateOrientation();
+      // lc.updatePosition();
+
+      // var x = this.camera.components['look-controls'].calculateHMDPosition();
+
+      // console.log(x);
+
+      // this.camera.setAttribute('look-controls', {enabled: true})
+
+
+
+      
+
+
+      // console.log(this.camera.components['look-controls'].pitchObject);
+
+      // this.camera.components['look-controls'].pitchObject
+
+
+      // sky1.setAttribute('visible', false);
+
+
+      // this.camera.setAttribute('look-controls', {enabled: false})
+      // this.camera.setAttribute('rotation',  '0 0 0');
+      // this.camera.setAttribute('look-controls', {enabled: true})
+
+      // this.camera.components['look-controls'].controls.resetPose();
+
+      // // console.log(this.camera.components);
+
+      // scene.canvas.setAttribute('rotation',  '0 0 0');
+
+      // this.camera.setAttribute('rotation',  '0 0 0');
+
+      // this.cameraEl.setAttribute('center',  '0 0 0');
+
+      // console.log(scene.setAttribute('rotation'));
+
+      // scene.object3D.rotation.y = 0;
+      // scene.object3D.updateMatrixWorld();      
+
+      // console.log(scene.reload())
+      // console.log(scene.object3D)
+
+      // var c = this.camera.getObject3D('camera');
+      // console.log(c);
+      // c.lookAt(new THREE.Vector3());
+      // c.updateMatrixWorld();      
+      // sky2.setAttribute('visible', true);
+      // sky2.setAttribute('rotation', '0 0 0');
+      // sky2.setAttribute('position', '0 0 0');
+
+      // if(e.srcElement.tagName == 'CANVAS'){
+      //   this.next()
+      // }
+    }.bind(this));
+
+  },
+  next: function (){
+    // TODO: Prevent click while loading
+    var maxYaw, maxPitch, idx = this.getVisibleIndex();
+    this.slides[idx].setAttribute('visible', false);
+    // Index of next slide
+    idx++;
+    // If we iterate past the last slide, reset to zero
+    if(idx==this.slides.length){
+      idx=0;
+    }
+
+    this.resetCamera();
+    this.slides[idx].setAttribute('visible', true);
+    this.slides[idx].setAttribute('rotation', '0 0 0');
+    // maxYaw = this.slides[idx].getAttribute('data-max-yaw');
+    // maxPitch = this.slides[idx].getAttribute('data-max-pitch');
+    // if(maxYaw || maxPitch){
+    //   this.cameraSetViewableArea(maxYaw, maxPitch);
+    // }
+  },
+  /**
+   * Get index of visible slide
+   * @return {[int]} slide index
+   */
+  getVisibleIndex(){
+    for (var i=0; i<this.slides.length; i++){
+      if(this.slides[i].getAttribute('visible') || this.slides[i].getAttribute('visible') === null){
+        return i;
+      }
+    } 
+  },
+  /**
+   * Reset camera position
+   * This is needed so the starting view of a slide isn't changed by previous slide interactions
+   */
+  resetCamera: function (){
+    // POTENTIAL FIX: https://github.com/aframevr/aframe-inspector/pull/280/commits/a60c1c4971882fccfe5c1b50c4db4c63c4eff54e
+    // this.cameraEl.setAttribute('rotation', '0 0 0')
+    // this.cameraEl.setAttribute('position', '0 0 2');
+    // this.camera.setAttribute('rotation', '0 0 0')
+
+  
+    // console.log(this.cameraEl.getAttribute('rotation'));
+
+    this.camera.setAttribute('rotation',  {x: 0, y: 0, z: 0});
+
+    // console.log(this.camera.getAttribute('rotation'));
+
+    // console.log(this.cameraEl);
+
+    // var c = this.camera.getObject3D('camera');
+    // c.lookAt(new THREE.Vector3());
+    // c.updateMatrixWorld();
+
+  },
+  /**
+   * Set viewable area of camera (maximum pitch / yaw)
+   */
+  cameraSetViewableArea: function (maxYaw, maxPitch){
+    console.log(maxYaw);
+    console.log(maxPitch);
+  },  
+});
