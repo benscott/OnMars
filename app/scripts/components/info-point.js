@@ -19,11 +19,10 @@ AFRAME.registerComponent('info-point', {
     document.getElementById('cursor').addEventListener(this.data.off, function(){
       // Have a little delay on hiding the text, so it doesn't stutter when quickly moving in/out
       clearTimeout(this.hideTimeout);
-      this.hideTimeout = setTimeout(function(){ this.hideInfo(); }.bind(this), this.data.hideTimeoutMS);
+      this.hideTimeout = setTimeout(function(){ 
+        this.hideInfo(); 
+      }.bind(this), this.data.hideTimeoutMS);
     }.bind(this));
-  },
-  update: function () {
-    console.log('update');
   },
   /**
    * Show info text
