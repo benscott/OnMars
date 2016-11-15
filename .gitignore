@@ -12,4 +12,5 @@ www/
 *.DS_Store
 *.log
 *.idea
+.jshintrc
 bin/src/*
