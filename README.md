@@ -53,6 +53,9 @@ https://github.com/googlevr/gvr-unity-sdk/tree/master/Samples/CardboardDesignLab
 http://almossawi.com/aframe-d3-visualization/demo/
 
 
+### Deployment
+
+https://github.com/driftyco/ionic-heroku-button
 
 
 
