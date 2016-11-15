@@ -6,6 +6,7 @@ platforms/
 plugins/
 bower_components/
 
+
 .tmp/
 www/
 .sass-cache
@@ -14,3 +15,4 @@ www/
 *.idea
 .jshintrc
 bin/src/*
+.*.sw*
