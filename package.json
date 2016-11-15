@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "author": "Ben Scott <ben@benscott.co.uk>",
   "description": "",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.11.1"
+  },
   "devDependencies": {
     "beepbeep": "^1.2.0",
     "connect-livereload": "^0.5.2",
