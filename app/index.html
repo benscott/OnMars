@@ -18,7 +18,7 @@
 <!-- inject:vendor:js --><!-- endinject -->
 <!-- inject:app:js --><!-- endinject -->
 
-<a-scene stats antialias='false' slide-show>
+<a-scene antialias='false' slide-show>
 
 <!-- Assets -->
   <a-assets>
@@ -58,28 +58,48 @@
   </a-assets>
 
   <a-entity class="slide" visible="true">
+    <a-sky src="#scene-0" mixin="sky"></a-sky>
+    <a-entity position="0 0 0" look-at="[camera]">
+      <a-image src="#logo" width="2.5" height="0.4" scale="0.75 0.75 0.75">
+            <a-animation attribute="scale" from="0.75 0 0.75" to="0.75 0.75 0.75" delay="1000" dur="200" fill="both" easing="ease-out"></a-animation>
+            <a-animation attribute="position" from="0 -3 0" to="0 0 0" delay="500" dur="1000" fill="both" easing="ease-out"></a-animation>      
+      </a-image>
+      <a-entity position="-0.9 -0.4 0" scale="0.7 0.7 0.7" bmfont-text="text: Dr. Peter Grindrod; color: #fff; lineHeight: 42; align: center; width: 500;fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png">
+        <a-animation attribute="scale" from="0.7 0 0.7" to="0.7 0.7 0.7" delay="1200" dur="200" fill="both" easing="ease-out"></a-animation>
+      </a-entity>          
+    </a-entity>
+  </a-entity>
+
+  <a-entity class="slide" visible="false">
     <a-sky src="#scene-1" mixin="sky"></a-sky>
+    <a-entity position="-1 0 1" mixin="info-point" data-text="Blah Blah Blah Blah" data-num="1"></a-entity>
+    <a-entity position="-1 1 0" mixin="info-point" data-text="Blah Blah" data-num="2"></a-entity>  
+    <a-entity position="1.5 0.5 0" mixin="info-point" data-text="Blah Blah" data-num="3"></a-entity>       
   </a-entity>  
 
   <a-entity class="slide" visible="false">
     <a-sky src="#scene-3" mixin="sky"></a-sky>
   </a-entity>    
 
-  <a-entity id="camera-wrapper" rotation="0 0 0">
-    <a-entity camera look-controls="enabled:false" look-controls-dev wasd-controls mouse-cursor stereocam="eye:left;">
-      <a-entity cursor geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.016" material="color: red" position="0 0 -1"></a-entity>
+  <a-entity class="slide" visible="false">
+    <a-curvedimage src="#scene-2-left" height="120" radius="60" rotation="0 45 0" stereo="eye:left"></a-curvedimage>
+    <a-curvedimage src="#scene-2-right" height="120" radius="60" rotation="0 45 0" stereo="eye:right"></a-curvedimage>     
+  </a-entity>  
+
+  <a-entity class="slide" visible="false">
+    <a-sky src="#scene-3" mixin="sky"></a-sky>
+    <a-entity position="-2 0 1" mixin="info-point" data-text="Blah Blah Blah Blah" data-num="1"></a-entity>
+    <a-entity position="-1 1 0" mixin="info-point" data-text="Blah Blah" data-num="2"></a-entity>  
+    <a-entity position="1.5 0.5 0" mixin="info-point" data-text="Blah Blah" data-num="3"></a-entity>         
+  </a-entity>    
+
+  <a-entity position="0 0 2">
+    <a-entity camera look-controls wasd-controls mouse-cursor stereocam="eye:left;">
+      <a-entity id="cursor" cursor geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.016" material="color: #fff" position="0 0 -1"></a-entity>
     </a-entity>
-   </a-entity>     
+  </a-entity>     
 
 </a-scene>
-
-
-
-<!-- <a-scene visible="false">
-
-</a-scene> -->
-
-
 
 <script src="cordova.js"></script>
 
