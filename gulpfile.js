@@ -17,6 +17,8 @@ var merge = require('merge-stream');
 var ripple = require('ripple-emulator');
 var wiredep = require('wiredep');
 
+var gulpUtil = require('gulp-util');
+
 /**
  * Parse arguments
  */
@@ -127,7 +129,7 @@ gulp.task('scripts', function() {
     .pipe(plugins.if(build, plugins.ngAnnotate()))
     .pipe(plugins.if(stripDebug, plugins.stripDebug()))
     .pipe(plugins.if(build, plugins.concat('app.js')))
-    .pipe(plugins.if(build, plugins.uglify()))
+    .pipe(plugins.if(build, plugins.uglify().on('error', gulpUtil.log)))
     .pipe(plugins.if(build && !emulate, plugins.rev()))
 
     .pipe(gulp.dest(dest))
