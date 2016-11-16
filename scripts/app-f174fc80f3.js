@@ -14,21 +14,6 @@
         });
       }]);
 }());
-/**
- * @ngdoc function
- * @name Space3D.util:lodash
- * @description
- * # Lo-Dash
- * Expose Lo-Dash through injectable factory, so we don't pollute / rely on global namespace
- * just inject lodash as _
- */
-(function () {
-   'use strict';
-	angular.module('Space3D')
-	  .factory('_', ["$window", function($window) {
-	    return $window._;
-	  }]);
-}());
 (function () {
    'use strict';
     AFRAME.registerComponent('info-point', {
@@ -59,11 +44,9 @@
        * Show info text
        */
       showInfo: function (){
-        console.log('SHOW');
         clearTimeout(this.hideTimeout);
         if(!this.isVisible()){
           this.hideAll(); 
-          console.log('EMIT');
           this.textEl.emit('showInfo');   
         }
       },
@@ -172,3 +155,19 @@
     });
 }());
 
+
+/**
+ * @ngdoc function
+ * @name Space3D.util:lodash
+ * @description
+ * # Lo-Dash
+ * Expose Lo-Dash through injectable factory, so we don't pollute / rely on global namespace
+ * just inject lodash as _
+ */
+(function () {
+   'use strict';
+	angular.module('Space3D')
+	  .factory('_', ["$window", function($window) {
+	    return $window._;
+	  }]);
+}());
