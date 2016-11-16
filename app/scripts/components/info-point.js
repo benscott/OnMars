@@ -28,11 +28,9 @@
        * Show info text
        */
       showInfo: function (){
-        console.log('SHOW');
         clearTimeout(this.hideTimeout);
         if(!this.isVisible()){
           this.hideAll(); 
-          console.log('EMIT');
           this.textEl.emit('showInfo');   
         }
       },
