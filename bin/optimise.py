@@ -6,10 +6,10 @@ dir = os.path.abspath(os.path.dirname(__file__))
 
 
 FILES = [
-  # 'PANO_20140705_mars1.jpg',
-  # 'PANO_20150101_stars.jpg',
-  'PANO_Dione_moon_color.jpg',
-  'PANO_Enceladus2_ps.jpg'
+  'PANO_20140705_mars1.jpg',
+  'PANO_20150101_stars.jpg',
+  # 'PANO_Dione_moon_color.jpg',
+  # 'PANO_Enceladus2_ps.jpg'
 ]
 
 
@@ -18,7 +18,7 @@ def main():
     print('Processing %s' % fn)
     file_path = os.path.join(dir, 'src', fn)
     api = ImageOptimAPI('zwwpvcxnbr');
-    img = api.image_from_file_path(file_path, resize_pow2=True)
+    img = api.image_from_file_path(file_path, {'size': '4096x2048'})
     img.save(os.path.join(dir, 'output', fn))
 
 
