@@ -16,7 +16,7 @@
 <body ng-app="Space3D">
 
 <!-- inject:vendor:js --><script src="vendor-9bf6f6e04c.js"></script><!-- endinject -->
-<!-- inject:app:js --><script src="scripts/app-842e5ceb2c.js"></script><!-- endinject -->
+<!-- inject:app:js --><script src="scripts/app-8d27123a51.js"></script><!-- endinject -->
 
 <a-scene antialias='false' slide-show>
 
@@ -24,10 +24,10 @@
   <a-assets>
 
     <!-- 3D Scenes -->
-    <img id="scene-0" src="/images/scenes/eso0932a.jpg" preload="auto">
+<!--     <img id="scene-0" src="/images/scenes/eso0932a.jpg" preload="auto">
     <img id="scene-1" src="/images/scenes/PANO_20150101_stars.jpg" preload="auto">
     <img id="scene-2-left" src="/images/scenes/174948main_LEFT-RED-South-Pole-304.jpg" preload="auto">
-    <img id="scene-2-right" src="/images/scenes/174953main_RIGHT-RED-South-Pole-304.jpg" preload="auto">    
+    <img id="scene-2-right" src="/images/scenes/174953main_RIGHT-RED-South-Pole-304.jpg" preload="auto">   -->  
     <img id="scene-3" src="/images/scenes/PANO_20140705_mars1.jpg" preload="auto">
 
     <!-- Markers -->
@@ -57,7 +57,7 @@
 
   </a-assets>
 
-  <a-entity class="slide" visible="true">
+<!--   <a-entity class="slide" visible="true">
     <a-sky src="#scene-0" mixin="sky"></a-sky>
     <a-entity position="0 0 0" look-at="[camera]">
       <a-image src="#logo" width="2.5" height="0.4" scale="0.75 0.75 0.75">
@@ -84,9 +84,9 @@
   <a-entity class="slide" visible="false">
     <a-curvedimage src="#scene-2-left" height="120" radius="60" rotation="0 45 0" stereo="eye:left"></a-curvedimage>
     <a-curvedimage src="#scene-2-right" height="120" radius="60" rotation="0 45 0" stereo="eye:right"></a-curvedimage>     
-  </a-entity>  
+  </a-entity>   -->
 
-  <a-entity class="slide" visible="false">
+  <a-entity class="slide" visible="true">
     <a-sky src="#scene-3" mixin="sky"></a-sky>
     <a-entity position="-2 0 1" mixin="info-point" data-text="Pellentesque habitant" data-num="1"></a-entity>
     <a-entity position="-1 1 0" mixin="info-point" data-text="Lorem ipsum" data-num="2"></a-entity>  
