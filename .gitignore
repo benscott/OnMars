@@ -15,4 +15,5 @@ www/
 *.idea
 .jshintrc
 bin/src/*
+bin/output/*
 .*.sw*
