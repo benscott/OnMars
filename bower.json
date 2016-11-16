@@ -3,7 +3,7 @@
   "author": "Ben Scott <ben@benscott.co.uk>",
   "private": "true",
   "devDependencies": {
-    "aframe-aframe-inspector": "git@github.com:/aframevr/aframe-inspector#v0.3.0"
+    "aframe-aframe-inspector": "git://github.com/aframevr/aframe-inspector#v0.3.0"
   },
   "dependencies": {
     "angular": "~1.5.3",
