@@ -16,7 +16,7 @@
 <body ng-app="Space3D">
 
 <!-- inject:vendor:js --><script src="vendor-9bf6f6e04c.js"></script><!-- endinject -->
-<!-- inject:app:js --><script src="scripts/app-f174fc80f3.js"></script><!-- endinject -->
+<!-- inject:app:js --><script src="scripts/app-842e5ceb2c.js"></script><!-- endinject -->
 
 <a-scene antialias='false' slide-show>
 
@@ -45,8 +45,8 @@
       <a-entity info-point>
         <a-image class="info-point-trigger" src="#marker-{{ num }}"  width="0.18" height="0.18"></a-image>
         <a-entity class="info-point-text" position="-0.5 0.2 0" scale="0.5 0.5 0.5" bmfont-text="text: {{ text }}; width: 400; color: #fff; lineHeight: 42; opacity:0; fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png; align: center">
-          <a-animation begin="showInfo" attribute="bmfont-text.opacity" dur="500" fill="forwards" to="1" repeat="0"></a-animation>
-          <a-animation begin="hideInfo" attribute="bmfont-text.opacity" dur="200" to="0" repeat="0"></a-animation>
+          <a-animation begin="showInfo" attribute="bmfont-text.opacity" dur="200" fill="forwards" to="1" repeat="0"></a-animation>
+          <a-animation begin="hideInfo" attribute="bmfont-text.opacity" dur="100" to="0" repeat="0"></a-animation>
         </a-entity>         
       </a-entity>
     </script>
