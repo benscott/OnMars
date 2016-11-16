@@ -192,7 +192,7 @@ gulp.task('vendor', function() {
 
   return gulp.src(vendorFiles)
     .pipe(plugins.concat('vendor.js'))
-    .pipe(plugins.if(build, plugins.uglify()))
+    // .pipe(plugins.if(build, plugins.uglify()))
     .pipe(plugins.if(build, plugins.rev()))
 
     .pipe(gulp.dest(targetDir))
