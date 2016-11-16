@@ -24,10 +24,10 @@
   <a-assets>
 
     <!-- 3D Scenes -->
-<!--     <img id="scene-0" src="/images/scenes/eso0932a.jpg" preload="auto">
+    <img id="scene-0" src="/images/scenes/eso0932a.jpg" preload="auto">
     <img id="scene-1" src="/images/scenes/PANO_20150101_stars.jpg" preload="auto">
     <img id="scene-2-left" src="/images/scenes/174948main_LEFT-RED-South-Pole-304.jpg" preload="auto">
-    <img id="scene-2-right" src="/images/scenes/174953main_RIGHT-RED-South-Pole-304.jpg" preload="auto">   -->  
+    <img id="scene-2-right" src="/images/scenes/174953main_RIGHT-RED-South-Pole-304.jpg" preload="auto">    
     <img id="scene-3" src="/images/scenes/PANO_20140705_mars1.jpg" preload="auto">
 
     <!-- Markers -->
@@ -45,8 +45,8 @@
       <a-entity info-point>
         <a-image class="info-point-trigger" src="#marker-{{ num }}"  width="0.18" height="0.18"></a-image>
         <a-entity class="info-point-text" position="-0.5 0.2 0" scale="0.5 0.5 0.5" bmfont-text="text: {{ text }}; width: 400; color: #fff; lineHeight: 42; opacity:0; fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png; align: center">
-          <a-animation begin="showInfo" attribute="bmfont-text.opacity" dur="200" fill="forwards" to="1" repeat="0"></a-animation>
-          <a-animation begin="hideInfo" attribute="bmfont-text.opacity" dur="100" to="0" repeat="0"></a-animation>
+          <a-animation begin="showInfo" attribute="bmfont-text.opacity" dur="500" fill="forwards" to="1" repeat="0"></a-animation>
+          <a-animation begin="hideInfo" attribute="bmfont-text.opacity" dur="200" to="0" repeat="0"></a-animation>
         </a-entity>         
       </a-entity>
     </script>
@@ -57,7 +57,7 @@
 
   </a-assets>
 
-<!--   <a-entity class="slide" visible="true">
+  <a-entity class="slide" visible="true">
     <a-sky src="#scene-0" mixin="sky"></a-sky>
     <a-entity position="0 0 0" look-at="[camera]">
       <a-image src="#logo" width="2.5" height="0.4" scale="0.75 0.75 0.75">
@@ -84,10 +84,10 @@
   <a-entity class="slide" visible="false">
     <a-curvedimage src="#scene-2-left" height="120" radius="60" rotation="0 45 0" stereo="eye:left"></a-curvedimage>
     <a-curvedimage src="#scene-2-right" height="120" radius="60" rotation="0 45 0" stereo="eye:right"></a-curvedimage>     
-  </a-entity>   -->
+  </a-entity>  
 
-  <a-entity class="slide" visible="true">
-    <a-sky color="pink" mixin="sky"></a-sky>
+  <a-entity class="slide" visible="false">
+    <a-sky src="#scene-3" mixin="sky"></a-sky>
     <a-entity position="-2 0 1" mixin="info-point" data-text="Pellentesque habitant" data-num="1"></a-entity>
     <a-entity position="-1 1 0" mixin="info-point" data-text="Lorem ipsum" data-num="2"></a-entity>  
     <a-entity position="1.5 0.5 0" mixin="info-point" data-text="Vivamus non auctor ligula" data-num="3"></a-entity>         
