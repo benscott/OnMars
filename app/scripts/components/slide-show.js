@@ -32,6 +32,13 @@
         if(i==this.slides.length){
           i=0;
         }
+
+        // If we have a slide title, emit show title event
+        var slideTitle = this.slides[i].getElementsByClassName('slide-title')[0]
+        if(slideTitle){
+          slideTitle.emit('showTitle')
+        }
+
         this.resetCameraRotation(); 
         // Have a small flash of black when changing slides
         setTimeout(function(){ 
