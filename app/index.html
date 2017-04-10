@@ -24,11 +24,11 @@
   <a-assets>
 
     <!-- 3D Scenes -->
-    <img id="scene-0" src="/images/scenes/eso0932a.jpg" preload="auto">
-    <img id="scene-1" src="/images/scenes/PANO_20150101_stars.jpg" preload="auto">
-    <img id="scene-2-left" src="/images/scenes/174948main_LEFT-RED-South-Pole-304.jpg" preload="auto">
-    <img id="scene-2-right" src="/images/scenes/174953main_RIGHT-RED-South-Pole-304.jpg" preload="auto">    
-    <img id="scene-3" src="/images/scenes/PANO_20140705_mars1.jpg" preload="auto">
+    <img id="scene-0" src="/images/scenes/splash.jpg" preload="auto">
+    <img id="scene-1" src="/images/scenes/1_final.jpg" preload="auto">
+    <img id="scene-2-left" src="/images/scenes/7_mcmurdo_MiplAtc_colorglyph2-A814R1-working_right_left.jpg" preload="auto">
+    <img id="scene-2-right" src="/images/scenes/7_mcmurdo_MiplAtc_colorglyph2-A814R1-working_right_right.jpg" preload="auto">    
+    <img id="scene-3" src="/images/scenes/2_final.jpg" preload="auto">
 
     <!-- Markers -->
     <img id="marker-1" src="/images/markers/1.png" preload="auto">
@@ -39,6 +39,7 @@
 
     <!-- Splash images -->
     <img id="logo" src="/images/logo.png" preload="auto">
+    <img id="stfc-logo" src="/images/stfc-logo.png" preload="auto">
     <img id="mars" src="/images/mars.png" preload="auto">
 
     <!-- Info point template -->
@@ -59,34 +60,48 @@
   </a-assets>
 
   <!-- Splash Screen -->
-  <a-entity class="slide" visible="true">
+<!--   <a-entity class="slide" visible="true">
     <a-sky src="#scene-0" mixin="sky"></a-sky>
-    <a-image position="0 0 1" src="#mars" width="5" height="5" look-at="[camera]">   
-    <a-entity position="0 0 2" look-at="[camera]">
-      <a-image src="#logo" width="2.5" height="0.7" scale="0.25 0.25 0.25">   
-      </a-image>
-      <a-entity position="-0.9 -0.7 0" scale="0.2 0.2 0.2" bmfont-text="text: Get up close and personal with the red planet, immersing yourself in a rover eye view of the search for life.; color: #fff; lineHeight: 36; align: center; width: 600;fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png">
+    <a-image position="-0.03 0 -1" src="#mars" width="5" height="5" scale="1 1 1">   
+    <a-entity position="0 0.8 1" >
+      <a-image position="0.02 0 0" src="#logo" width="2.5" height="0.7" scale="0.5 0.5 0.5"></a-image>
+      <a-entity position="-0.98 -0.7 0" scale="0.5 0.5 0.5" bmfont-text="text: Get up close and personal with the red planet, using just your phone.  Download the free app, grab a viewing device and take a whistle-stop tour of Mars. Immerse yourself in a rover eye view of the search for life.; color: #fff; lineHeight: 40; align: center; width: 810; fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png">
       </a-entity>  
-      <a-entity position="-0.9 -1 0" scale="0.6 0.6 0.6" bmfont-text="text: CLICK ANYWHERE TO BEGIN; color: #FF9800; lineHeight: 42; align: center; width: 600;fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png">
-      </a-entity>           
-    </a-entity>
-  </a-entity>
+      <a-entity position="-0.60 -0.98 0" scale="0.5 0.5 0.5" bmfont-text="text: CLICK ANYWHERE TO BEGIN; color: #FF9800; lineHeight: 42; align: center; width: 500;fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png">
+      </a-entity>
+      <!-- Credits #1 -->
+      <a-entity position="-0.57 -1.22 0" scale="0.4 0.4 0.4" bmfont-text="text: Science Lead: Dr Peter Grindrod; color: #E5E5E5; lineHeight: 42; align: center; width: 600;fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png">
+      </a-entity>
+      <a-entity position="-0.57 -1.30 0" scale="0.4 0.4 0.4" bmfont-text="text: Birkbeck, University of London; color: #cbcbcb; lineHeight: 42; align: center; width: 600;fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png">
+      </a-entity>   
+      <!-- Credits #2 -->
+      <a-entity position="-0.57 -1.42 0" scale="0.4 0.4 0.4" bmfont-text="text: Public Engagement Lead: Ivvet Modinou; color: #E5E5E5; lineHeight: 42; align: center; width: 600;fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png">
+      </a-entity>
+      <a-entity position="-0.57 -1.50 0" scale="0.4 0.4 0.4" bmfont-text="text: British Science Association; color: #ccc; lineHeight: 42; align: center; width: 600;fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png">
+      </a-entity>
+      <!-- Credits #3 -->
+      <a-entity position="-0.57 -1.62 0" scale="0.4 0.4 0.4" bmfont-text="text: Development Lead: Ben Scott; color: #E5E5E5; lineHeight: 42; align: center; width: 600;fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png">
+      </a-entity>
+      <a-entity position="-0.57 -1.70 0" scale="0.4 0.4 0.4" bmfont-text="text: Sparkd Ltd.; color: #ccc; lineHeight: 42; align: center; width: 600;fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png">
+      </a-entity>
+      <a-entity position="-0.50 -1.90 0" scale="0.35 0.35 0.35" bmfont-text="text: Funded by:; color: #ccc; lineHeight: 42; align: center; width: 600;fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png">
+      </a-entity>      
+      <a-image position="-0.0.5 -2.05 0" src="#stfc-logo" width="2.5" height="0.7" scale="0.4 0.4 0.4"></a-image>
+    </a-entity>    
+  </a-entity> -->
 
-  <a-entity class="slide" visible="false">
+  <a-entity class="slide" visible="true">
     <a-sky src="#scene-1" mixin="sky"></a-sky>
+    <a-animation attribute="material.opacity" begin="fade" to="0"></a-animation>
     <a-entity position="-1 0 1" mixin="info-point" data-text="Lorem ipsum dolor sit amet" data-num="1"></a-entity>
     <a-entity position="-1 1 0" mixin="info-point" data-text="Lorem ipsum" data-num="2"></a-entity>  
     <a-entity position="1.5 0.5 0" mixin="info-point" data-text="Lorem ipsum" data-num="3"></a-entity>       
   </a-entity>  
 
   <a-entity class="slide" visible="false">
-    <a-sky src="#scene-3" mixin="sky"></a-sky>
+    <a-sky src="#scene-2-left" mixin="sky" stereo="eye:left"></a-sky>
+    <a-sky src="#scene-2-right" mixin="sky" stereo="eye:right"></a-sky>
   </a-entity>    
-
-  <a-entity class="slide" visible="false">
-    <a-curvedimage src="#scene-2-left" height="120" radius="60" rotation="0 45 0" stereo="eye:left"></a-curvedimage>
-    <a-curvedimage src="#scene-2-right" height="120" radius="60" rotation="0 45 0" stereo="eye:right"></a-curvedimage>     
-  </a-entity>  
 
   <a-entity class="slide" visible="false">
     <a-sky src="#scene-3" mixin="sky"></a-sky>
