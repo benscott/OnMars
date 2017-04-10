@@ -1,6 +1,6 @@
 'use strict';
 
-var appName = 'Space3D';
+var appName = 'OnMars';
 
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();

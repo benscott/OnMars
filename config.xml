@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="space3d" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>Space3D</name>
+  <name>On Mars</name>
   <description>
-    Add your desription here
+    3D Explorer of the Red Planet
   </description>
   <author email="ben@benscott.co.uk">
     Ben Scott
