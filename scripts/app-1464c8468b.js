@@ -1,6 +1,6 @@
 /**
  * @ngdoc overview
- * @name Space3D
+ * @name OnMars
  * @description
  * # Initializes main application and routing
  *
@@ -165,7 +165,7 @@
 
 /**
  * @ngdoc function
- * @name Space3D.util:lodash
+ * @name OnMars.util:lodash
  * @description
  * # Lo-Dash
  * Expose Lo-Dash through injectable factory, so we don't pollute / rely on global namespace
@@ -173,7 +173,7 @@
  */
 (function () {
    'use strict';
-	angular.module('Space3D')
+	angular.module('OnMars')
 	  .factory('_', ["$window", function($window) {
 	    return $window._;
 	  }]);
