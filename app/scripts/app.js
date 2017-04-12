@@ -1,6 +1,6 @@
 /**
  * @ngdoc overview
- * @name Space3D
+ * @name OnMars
  * @description
  * # Initializes main application and routing
  *
