@@ -8,7 +8,7 @@
  */
 (function () {
    'use strict';
-    angular.module('Space3D', ['ionic', 'ngCordova', 'ngResource'])
+    angular.module('OnMars', ['ionic', 'ngCordova', 'ngResource'])
       .run(function($ionicPlatform) {
         $ionicPlatform.ready(function() {
         });

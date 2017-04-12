@@ -15,7 +15,7 @@ app.use(function(req, res, next) {
       auth = new Buffer(req.headers.authorization.substring(6), 'base64').toString().split(':');
     }
 
-    if (!auth || auth[0] !== 'test' || auth[1] !== 'space3d') {
+    if (!auth || auth[0] !== 'test' || auth[1] !== 'onmars') {
         // any of the tests failed
         // send an Basic Auth request (HTTP Code: 401 Unauthorized)
         res.statusCode = 401;

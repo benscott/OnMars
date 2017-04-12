@@ -1,4 +1,4 @@
-# Space3D
+# OnMars
 Virtual Reality Space Exploration
 
 

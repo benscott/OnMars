@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title>Space3D</title>
+    <title>On Mars</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <meta name="format-detection" content="telephone=no">
@@ -13,7 +13,7 @@
     <!-- <link rel="stylesheet" href="styles/own-icons.css"> -->
 
 </head>
-<body ng-app="Space3D">
+<body ng-app="OnMars">
 
 <!-- inject:vendor:js --><!-- endinject -->
 <!-- inject:app:js --><!-- endinject -->
@@ -26,9 +26,13 @@
     <!-- 3D Scenes -->
     <img id="scene-0" src="/images/scenes/splash.jpg" preload="auto">
     <img id="scene-1" src="/images/scenes/1_final.jpg" preload="auto">
-    <img id="scene-2-left" src="/images/scenes/7_mcmurdo_MiplAtc_colorglyph2-A814R1-working_right_left.jpg" preload="auto">
-    <img id="scene-2-right" src="/images/scenes/7_mcmurdo_MiplAtc_colorglyph2-A814R1-working_right_right.jpg" preload="auto">    
-    <img id="scene-3" src="/images/scenes/2_final.jpg" preload="auto">
+    <img id="scene-2" src="/images/scenes/2_final.jpg" preload="auto">
+    <img id="scene-3" src="/images/scenes/3_final.jpg" preload="auto">
+    <img id="scene-4" src="/images/scenes/4_final.jpg" preload="auto">  
+    <img id="scene-5" src="/images/scenes/5_final.jpg" preload="auto">  
+    <img id="scene-6" src="/images/scenes/6_final.jpg" preload="auto">            
+    <img id="scene-7-left" src="/images/scenes/7_mcmurdo_MiplAtc_colorglyph2-A814R1-working_right_left.jpg" preload="auto">
+    <img id="scene-7-right" src="/images/scenes/7_mcmurdo_MiplAtc_colorglyph2-A814R1-working_right_right.jpg" preload="auto">    
 
     <!-- Markers -->
     <img id="marker-1" src="/images/markers/1.png" preload="auto">
@@ -60,6 +64,8 @@
         <a-animation attribute="bmfont-text.opacity" to="0" dur="500" repeat="0" begin="showTitle" delay="3000"></a-animation>
       </a-entity>
     </script>    
+
+    <!-- look-at="[camera]" -->
 
     <!-- Mixins -->
     <a-mixin id="info-point" template="src: #info-point-tpl; type: handlebars" look-at="[camera]"></a-mixin>
@@ -97,28 +103,58 @@
       </a-entity>      
       <a-image position="-0.0.5 -2.05 0" src="#stfc-logo" width="2.5" height="0.7" scale="0.4 0.4 0.4"></a-image>
     </a-entity>    
-  </a-entity>
+  </a-entity>  
 
   <a-entity class="slide" visible="false">
     <a-sky src="#scene-1" mixin="sky"></a-sky>
     <a-entity mixin="title" data-text="1. Spirit"></a-entity>    
-    <a-entity position="-1 0 1" mixin="info-point" data-text="Lorem ipsum dolor sit amet" data-num="1"></a-entity>
-    <a-entity position="-1 1 0" mixin="info-point" data-text="Lorem ipsum" data-num="2"></a-entity>  
-    <a-entity position="1.5 0.5 0" mixin="info-point" data-text="Lorem ipsum" data-num="3"></a-entity>       
+    <a-entity position="1.6 -0.1 -0.5" scale="1.1 1.1 1.1" mixin="info-point" data-text="Landing Site" data-num="1"></a-entity>
+    <a-entity position="-3.6 1.4 8" scale="2.5 2.5 2.5" mixin="info-point" data-text="McCool Hill" data-num="2"></a-entity>
+    <a-entity position="3 0.19 1" scale="1.1 1.1 1.1" mixin="info-point" data-text="Husband Hill" data-num="3"></a-entity>
   </a-entity>  
 
   <a-entity class="slide" visible="false">
-    <a-entity mixin="title" data-text="2. Enterprise"></a-entity>  
-    <a-sky src="#scene-2-left" mixin="sky" stereo="eye:left"></a-sky>
-    <a-sky src="#scene-2-right" mixin="sky" stereo="eye:right"></a-sky>
+    <a-sky src="#scene-2" mixin="sky" theta-start="50"></a-sky>
+    <a-entity mixin="title" data-text="2. V1"></a-entity>  
+    <a-entity position="-2.1 -1.6 0" scale="1.2 1.2 1.2" mixin="info-point" data-text="Sandy Flats" data-num="1"></a-entity>
   </a-entity>    
 
   <a-entity class="slide" visible="false">
     <a-sky src="#scene-3" mixin="sky"></a-sky>
-    <a-entity mixin="title" data-text="3. Enterprise"></a-entity>  
-    <a-entity position="-2 0 1" mixin="info-point" data-text="Pellentesque habitant" data-num="1"></a-entity>
-    <a-entity position="-1 1 0" mixin="info-point" data-text="Lorem ipsum" data-num="2"></a-entity>  
-    <a-entity position="1.5 0.5 0" mixin="info-point" data-text="Vivamus non auctor ligula" data-num="3"></a-entity>         
+    <a-entity mixin="title" data-text="3. Pathfinder"></a-entity>  
+    <a-entity position="-2 -0.4 1.2" mixin="info-point" data-text="Yogi" data-num="1"></a-entity>
+    <a-entity position="-3 0.25 7" scale="1.5 1.5 1.5" mixin="info-point" data-text="Twin Peaks" data-num="2"></a-entity>  
+    <a-entity position="8 -3 20" scale="8 8 8" mixin="info-point" data-text="Chimp" data-num="3"></a-entity>         
+  </a-entity>    
+
+  <a-entity class="slide" visible="false">
+    <a-sky src="#scene-4" mixin="sky"></a-sky>
+    <a-entity mixin="title" data-text="4. Opportunity"></a-entity>  
+    <a-entity position="6 -0.3 -1" scale="2 2 2" mixin="info-point" data-text="Bounce Rock" data-num="1"></a-entity>
+    <a-entity position="-3 -0.28 2.5" scale="1.2 1.2 1.2" mixin="info-point" data-text="Shoemaker's Patio" data-num="2"></a-entity>
+    <a-entity position="-1.7 -0.17 0" scale="1 1 1" mixin="info-point" data-text="Big Dig" data-num="3"></a-entity>
+  </a-entity>   
+
+  <a-entity class="slide" visible="false">
+    <a-sky src="#scene-5" mixin="sky"></a-sky>
+    <a-entity mixin="title" data-text="5. Phoenix"></a-entity>  
+    <a-entity position="1.32 -0.75 0" scale="1 1 1" mixin="info-point" data-text="Sleeping Beauty" data-num="1"></a-entity>
+    <a-entity position="0.9 -1.8 3.8" scale="1.2 1.2 1.2" mixin="info-point" data-text="Snow White" data-num="2"></a-entity>
+    <a-entity position="2 -2 1.8" scale="1.2 1.2 1.2" mixin="info-point" data-text="Dodo-Goldilocks" data-num="3"></a-entity>
+  </a-entity>
+
+  <a-entity class="slide" visible="false">
+    <a-sky src="#scene-6" mixin="sky"></a-sky>
+    <a-entity mixin="title" data-text="6. MSL 1"></a-entity>  
+    <a-entity position="-1.6 0.2 7" scale="2 2 2" mixin="info-point" data-text="Namib" data-num="1"></a-entity>
+    <a-entity position="-3.4 0.6 0" scale="1.5 1.5 1.5" mixin="info-point" data-text="Aeolis Mons" data-num="2"></a-entity>
+    <a-entity position="-0.2 0.2 0" scale="0.8 0.8 0.8" mixin="info-point" data-text="Hematite Ridge" data-num="3"></a-entity>
+  </a-entity>
+
+  <a-entity class="slide" visible="false">
+    <a-entity mixin="title" data-text="7. Spirit"></a-entity>  
+    <a-sky src="#scene-7-left" mixin="sky" stereo="eye:left"></a-sky>
+    <a-sky src="#scene-7-right" mixin="sky" stereo="eye:right"></a-sky>
   </a-entity>    
 
   <a-entity position="0 0 2">
