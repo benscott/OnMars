@@ -34,9 +34,9 @@
         }
 
         // If we have a slide title, emit show title event
-        var slideTitle = this.slides[i].getElementsByClassName('slide-title')[0]
+        var slideTitle = this.slides[i].getElementsByClassName('slide-title')[0];
         if(slideTitle){
-          slideTitle.emit('showTitle')
+          slideTitle.emit('showTitle');
         }
 
         this.resetCameraRotation(); 
