@@ -62,4 +62,7 @@ gulp --build
 git subtree push --prefix www origin gh-pages
 
 
+### Release
+
+https://github.com/hughred22/YouTube-Video-Listing-Ionic-Mobile-App/wiki/Preparing-for-Release-and-Publishing-Your-Ionic-App
 
