@@ -90,7 +90,6 @@
         // On mobile, only bind after a user has entered VR
         if(AFRAME.utils.isMobile()){
           document.querySelector('a-scene').addEventListener('enter-vr', function () {
-             console.log('ENTER VR');
              this.bindMethods();
           }.bind(this));      
         }else{
