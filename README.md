@@ -66,3 +66,12 @@ git subtree push --prefix www origin gh-pages
 
 https://github.com/hughred22/YouTube-Video-Listing-Ionic-Mobile-App/wiki/Preparing-for-Release-and-Publishing-Your-Ionic-App
 
+### Android
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore resources/android/onmars.keystore platforms/android/build/outputs/apk/android-release-unsigned.apk OnMars
+
+~/Library/Android/sdk/build-tools/25.0.3/zipalign -v 4 platforms/android/build/outputs/apk/android-release-unsigned.apk platforms/android/build/outputs/apk/OnMars.apk
+
+
+
+
