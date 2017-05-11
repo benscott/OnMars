@@ -73,5 +73,6 @@ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore resources/andro
 ~/Library/Android/sdk/build-tools/25.0.3/zipalign -v 4 platforms/android/build/outputs/apk/android-release-unsigned.apk platforms/android/build/outputs/apk/OnMars.apk
 
 
-
+data:video/mp4;base64
+https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-whitelist/
 
