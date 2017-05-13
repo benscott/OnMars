@@ -46,7 +46,7 @@
        * Helper function - is text visible
        */
       isVisible: function(){
-        return this.textEl.components['bmfont-text'].data.opacity !== 0;
+        return this.textEl.components.text.data.opacity !== 0;
       },
       /**
        * Hide all info text - called before displaying new text

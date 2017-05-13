@@ -6,6 +6,7 @@
     "dependencies": {
         "@ionic-native/screen-orientation": "^3.7.0",
         "cordova-android": "^6.2.3",
+        "cordova-ios": "^4.4.0",
         "cordova-plugin-console": "~1.0.7",
         "cordova-plugin-crosswalk-webview": "^2.2.0",
         "cordova-plugin-device": "~1.1.6",
@@ -80,7 +81,8 @@
             }
         },
         "platforms": [
-            "android"
+            "android",
+            "ios"
         ]
     }
 }

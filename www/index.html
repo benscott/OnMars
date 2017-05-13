@@ -15,14 +15,11 @@
 </head>
 <body ng-app="OnMars">
 
-<!-- inject:vendor:js --><script src="vendor-9bf6f6e04c.js"></script><!-- endinject -->
-<!-- inject:app:js --><script src="scripts/app-a588c70013.js"></script><!-- endinject -->
+<!-- inject:vendor:js --><script src="vendor-a632fdef79.js"></script><!-- endinject -->
+<!-- inject:app:js --><script src="scripts/app-57f5001af6.js"></script><!-- endinject -->
 
 <a-scene antialias='false' slide-show>
-
-<!-- Assets -->
   <a-assets>
-
     <!-- 3D Scenes -->
     <img id="scene-1" src="images/scenes/1_final.jpg" preload="auto">
     <img id="scene-2" src="images/scenes/2_final.jpg" preload="auto">
@@ -43,23 +40,30 @@
     <img id="stfc-logo" src="images/stfc-logo.png" preload="auto">
     <img id="mars" src="images/mars.png" preload="auto">
 
+    <!-- Mixins -->
+    <a-mixin id="info-point" template="src: #info-point-tpl; type: handlebars" look-at="[camera]"></a-mixin>
+    <a-mixin id="sky" radius="80" segments-width="10"></a-mixin>
+    <a-mixin id="title" template="src: #title-tpl; type: handlebars"></a-mixin>
+    <a-mixin id="credit" template="src: #credit-tpl; type: handlebars"></a-mixin>   
+
+    <!-- Templates -->
     <!-- Info point template -->
     <script id="info-point-tpl" type="text/handlebars">
       <a-entity info-point>
         <a-image class="info-point-trigger" src="#marker-{{ num }}"  width="0.18" height="0.18"></a-image>
-        <a-entity class="info-point-text" position="-0.5 0.2 0" scale="0.5 0.5 0.5" bmfont-text="text: {{ text }}; width: 400; color: #fff; lineHeight: 42; opacity:0; fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png; align: center">
-          <a-animation begin="showInfo" attribute="bmfont-text.opacity" dur="500" fill="forwards" to="1" repeat="0"></a-animation>
-          <a-animation begin="hideInfo" attribute="bmfont-text.opacity" dur="200" to="0" repeat="0"></a-animation>
-        </a-entity>         
+        <a-text class="info-point-text" position="0 0.2 0" text="value: {{ text }}; width: 1.8; color: #fff; align: center; opacity: 0">
+          <a-animation begin="showInfo" attribute="text.opacity" dur="500" fill="forwards" to="1" repeat="0"></a-animation>
+          <a-animation begin="hideInfo" attribute="text.opacity" dur="200" to="0" repeat="0"></a-animation>          
+        </a-text>         
       </a-entity>
     </script>
 
     <!-- title template -->
     <script id="title-tpl" type="text/handlebars">
-      <a-entity class="slide-title" position="-1 1.5 0" scale="1 1 1" bmfont-text="text: {{ text }}; color: #fff; align: center; width: 400;fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png">
-        <a-animation attribute="bmfont-text.opacity" to="1" dur="50" repeat="0" begin="showTitle"></a-animation>
-        <a-animation attribute="bmfont-text.opacity" to="0" dur="500" repeat="0" begin="showTitle" delay="3000"></a-animation>
-      </a-entity>
+      <a-text class="slide-title" position="0 1.5 0" text="value: {{ text }}; color: #fff; width: 4; align: center;">
+        <a-animation attribute="text.opacity" to="1" dur="50" repeat="0" begin="showTitle"></a-animation>
+        <a-animation attribute="text.opacity" to="0" dur="500" repeat="0" begin="showTitle" delay="3000"></a-animation>      
+      </a-text>
     </script>    
 
     <!-- credit template -->
@@ -67,116 +71,38 @@
       <a-entity position="-1.4 -5 2" scale="0.8 0.8 0.8" rotation="-65 0 0" bmfont-text="text: Image credit: {{ credit }}; color: #E5E5E5; lineHeight: 32; align: center; width: 700;fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png">
     </script> 
 
-    <!-- Mixins -->
-    <a-mixin id="info-point" template="src: #info-point-tpl; type: handlebars" look-at="[camera]"></a-mixin>
-    <a-mixin id="sky" radius="80" segments-width="10"></a-mixin>
-    <a-mixin id="title" template="src: #title-tpl; type: handlebars"></a-mixin>
-    <a-mixin id="credit" template="src: #credit-tpl; type: handlebars"></a-mixin>
-
   </a-assets>
 
-  <!-- Splash Screen -->
   <a-entity class="slide" visible="true">
     <a-sky color="#333" mixin="sky"></a-sky>
-    <a-image position="-0.03 0 -1" src="#mars" width="5" height="5" scale="1 1 1">
-    <a-entity mixin="credit" data-credit="UGS"></a-entity>
-<a-entity position="0 0.8 1">
-      <a-image position="0.02 0 0" src="#logo" width="2.5" height="0.7" scale="0.5 0.5 0.5"></a-image>
-      <a-entity position="-0.98 -0.7 0" scale="0.5 0.5 0.5" bmfont-text="text: Get up close and personal with the red planet, using just your phone.  Download the free app, grab a viewing device and take a whistle-stop tour of Mars. Immerse yourself in a rover eye view of the search for life.; color: #fff; lineHeight: 40; align: center; width: 810; fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png">
-      </a-entity>  
-      <a-entity position="-0.60 -0.98 0" scale="0.5 0.5 0.5" bmfont-text="text: CLICK ANYWHERE TO BEGIN; color: #FF9800; lineHeight: 42; align: center; width: 500;fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png">
-      </a-entity>
-      <!-- Credits #1 -->
-      <a-entity position="-0.57 -1.22 0" scale="0.4 0.4 0.4" bmfont-text="text: Science Lead: Dr Peter Grindrod; color: #E5E5E5; lineHeight: 42; align: center; width: 600;fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png">
-      </a-entity>
-      <a-entity position="-0.57 -1.30 0" scale="0.4 0.4 0.4" bmfont-text="text: Birkbeck, University of London; color: #cbcbcb; lineHeight: 42; align: center; width: 600;fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png">
-      </a-entity>   
-      <!-- Credits #2 -->
-      <a-entity position="-0.57 -1.42 0" scale="0.4 0.4 0.4" bmfont-text="text: Public Engagement Lead: Ivvet Modinou; color: #E5E5E5; lineHeight: 42; align: center; width: 600;fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png">
-      </a-entity>
-      <a-entity position="-0.57 -1.50 0" scale="0.4 0.4 0.4" bmfont-text="text: British Science Association; color: #ccc; lineHeight: 42; align: center; width: 600;fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png">
-      </a-entity>
-      <!-- Credits #3 -->
-      <a-entity position="-0.57 -1.62 0" scale="0.4 0.4 0.4" bmfont-text="text: Development Lead: Ben Scott; color: #E5E5E5; lineHeight: 42; align: center; width: 600;fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png">
-      </a-entity>
-      <a-entity position="-0.57 -1.70 0" scale="0.4 0.4 0.4" bmfont-text="text: Sparkd Ltd.; color: #ccc; lineHeight: 42; align: center; width: 600;fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png">
-      </a-entity>
-      <a-entity position="-0.50 -1.90 0" scale="0.35 0.35 0.35" bmfont-text="text: Funded by:; color: #ccc; lineHeight: 42; align: center; width: 600;fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png">
-      </a-entity>      
-      <a-image position="-0.0.5 -2.05 0" src="#stfc-logo" width="2.5" height="0.7" scale="0.4 0.4 0.4"></a-image>
-    </a-entity>    
-        <a-entity position="0 0 40" scale="6 6 6" bmfont-text="text: It's behind you!; color: #ccc; lineHeight: 42; align: center; width: 300;fnt:./fonts/arial.fnt; fntImage:./fonts/arial.png" look-at="[camera]"></a-entity>  
-
-  </a-entity>  
+    <a-image position="-0.03 0 -1" src="#mars" width="5" height="5" scale="1 1 1"></a-image>
+    <a-entity position="0 0.8 0">
+      <a-image position="0 0 0" src="#logo" width="2.5" height="0.7" scale="0.5 0.5 0.5">
+      </a-image>
+      <a-text position="0 -0.5 0" text="align: center; width: 2.0; lineHeight: 50; wrapCount: 45;
+             value: Get up close and personal with the red planet, using just your phone.  Download the free app, grab a viewing device and take a whistle-stop tour of Mars. Immerse yourself in a rover eye view of the search for life.">
+      </a-text>
+      <a-text position="0 -0.98 0" text="color: #FF9800; align: center; width: 2.0; value: CLICK ANYWHERE TO BEGIN; ">
+      </a-text>          
+    </a-entity>
+  </a-entity>
 
   <a-entity class="slide" visible="false">
     <a-sky src="#scene-1" mixin="sky"></a-sky>
-    <a-entity mixin="title" data-text="1. Spirit"></a-entity>    
+    <a-entity mixin="title" data-text="1. Spirit"></a-entity>
     <a-entity position="1.6 -0.1 -0.5" scale="1.1 1.1 1.1" mixin="info-point" data-text="Landing Site" data-num="1"></a-entity>
     <a-entity position="-3.6 1.4 8" scale="2.5 2.5 2.5" mixin="info-point" data-text="McCool Hill" data-num="2"></a-entity>
-    <a-entity position="3 0.19 1" scale="1.1 1.1 1.1" mixin="info-point" data-text="Husband Hill" data-num="3"></a-entity>
-    <a-entity mixin="credit" data-credit="NASA/JPL/Cornell"></a-entity>   
-  </a-entity>  
-
-  <a-entity class="slide" visible="false">
-    <a-sky src="#scene-2" mixin="sky" theta-start="50"></a-sky>
-    <a-entity mixin="title" data-text="2. V1"></a-entity>  
-    <a-entity position="-2.1 -1.6 0" scale="1.2 1.2 1.2" mixin="info-point" data-text="Sandy Flats" data-num="1"></a-entity>
-    <a-entity mixin="credit" data-credit="NASA/JPL"></a-entity>
-  </a-entity>    
-
-  <a-entity class="slide" visible="false">
-    <a-sky src="#scene-3" mixin="sky"></a-sky>
-    <a-entity mixin="title" data-text="3. Pathfinder"></a-entity>  
-    <a-entity position="-2 -0.4 1.2" mixin="info-point" data-text="Yogi" data-num="1"></a-entity>
-    <a-entity position="-3 0.25 7" scale="1.8 1.8 1.8" mixin="info-point" data-text="Twin Peaks" data-num="2"></a-entity>  
-    <a-entity position="8 -3 20" scale="8 8 8" mixin="info-point" data-text="Chimp" data-num="3"></a-entity>
-    <a-entity mixin="credit" data-credit="NASA/JPL"></a-entity>     
-  </a-entity>    
-
-  <a-entity class="slide" visible="false">
-    <a-sky src="#scene-4" mixin="sky"></a-sky>
-    <a-entity mixin="title" data-text="4. Opportunity"></a-entity>  
-    <a-entity position="6 -0.3 -1" scale="2 2 2" mixin="info-point" data-text="Bounce Rock" data-num="1"></a-entity>
-    <a-entity position="-3 -0.28 2.5" scale="1.2 1.2 1.2" mixin="info-point" data-text="Shoemaker's Patio" data-num="2"></a-entity>
-    <a-entity position="-1.7 -0.17 0" scale="1 1 1" mixin="info-point" data-text="Big Dig" data-num="3"></a-entity>
-    <a-entity mixin="credit" data-credit="NASA/JPL/Cornell"></a-entity>  
-  </a-entity>   
-
-  <a-entity class="slide" visible="false">
-    <a-sky src="#scene-5" mixin="sky"></a-sky>
-    <a-entity mixin="title" data-text="5. Phoenix"></a-entity>  
-    <a-entity position="1.32 -0.75 0" scale="1 1 1" mixin="info-point" data-text="Sleeping Beauty" data-num="1"></a-entity>
-    <a-entity position="0.9 -1.8 3.8" scale="1.2 1.2 1.2" mixin="info-point" data-text="Snow White" data-num="2"></a-entity>
-    <a-entity position="2 -2 1.8" scale="1.2 1.2 1.2" mixin="info-point" data-text="Dodo-Goldilocks" data-num="3"></a-entity>
-    <a-entity mixin="credit" data-credit="NASA/JPL/UA/Texas A&amp;M"></a-entity> 
-  </a-entity>
-
-  <a-entity class="slide" visible="false">
-    <a-sky src="#scene-6" mixin="sky"></a-sky>
-    <a-entity mixin="title" data-text="6. MSL 1"></a-entity>  
-    <a-entity position="-1.6 0.2 7" scale="2 2 2" mixin="info-point" data-text="Namib" data-num="1"></a-entity>
-    <a-entity position="-3.4 0.6 0" scale="1.5 1.5 1.5" mixin="info-point" data-text="Aeolis Mons" data-num="2"></a-entity>
-    <a-entity position="-0.2 0.2 0" scale="0.8 0.8 0.8" mixin="info-point" data-text="Hematite Ridge" data-num="3"></a-entity>
-    <a-entity mixin="credit" data-credit="NASA/JPL/MSSS"></a-entity>
-  </a-entity>
-
-  <a-entity class="slide" visible="false">
-    <a-entity mixin="title" data-text="7. Spirit"></a-entity>  
-    <a-sky src="#scene-1" mixin="sky"></a-sky>
-    <a-entity position="-0.6 -0.05 3.7" scale="0.8 0.8 0.8" mixin="info-point" data-text="Tyrone" data-num="1"></a-entity>
-    <a-entity position="1.5 -0.15 1" scale="0.8 0.8 0.8" mixin="info-point" data-text="Home Plate" data-num="2"></a-entity>
-    <a-entity position="-0.6 -1 2.8" scale="0.7 0.7 0.7" mixin="info-point" data-text="Bear Island" data-num="3"></a-entity>    
-    <a-entity mixin="credit" data-credit="NASA/JPL/Cornell"></a-entity>
-  </a-entity>    
+    <a-entity position="3 0.19 1" scale="1.1 1.1 1.1" mixin="info-point" data-text="Husband Hill" data-num="3"></a-entity>      
+  </a-entity>        
 
   <a-entity position="0 0 2">
-    <a-entity camera look-controls wasd-controls mouse-cursor stereocam="eye:left;">
+    <a-entity camera look-controls wasd-controls mouse-cursor>
       <a-entity id="cursor" cursor geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.016" material="color: #fff" position="0 0 -1"></a-entity>
     </a-entity>
   </a-entity>     
 
 </a-scene>
+
 
 <script src="cordova.js"></script>
 

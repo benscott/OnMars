@@ -9,7 +9,7 @@
         this.camera = document.querySelector('a-entity[camera]');
         this.lookControls = this.camera.components['look-controls'];
         // On mobile, only bind after a user has entered VR
-        if(AFRAME.utils.isMobile()){
+        if(AFRAME.utils.device.isMobile()){
           document.querySelector('a-scene').addEventListener('enter-vr', function () {
              this.bindMethods();
           }.bind(this));      
