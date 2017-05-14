@@ -15,7 +15,6 @@
     <preference name="BackupWebStorage" value="none" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
-    <preference name="Orientation" value="landscape" />
     <preference name="xwalkMode" value="lite" />
     <feature name="StatusBar">
         <param name="ios-package" onload="true" value="CDVStatusBar" />
@@ -23,6 +22,7 @@
     <allow-navigation href="data:*" />
     <allow-intent href="data:*" />
     <platform name="android">
+        <preference name="Orientation" value="landscape" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />
         <icon density="hdpi" src="resources/android/icon/drawable-hdpi-icon.png" />
