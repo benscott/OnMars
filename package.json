@@ -8,7 +8,6 @@
         "cordova-android": "^6.2.3",
         "cordova-ios": "^4.4.0",
         "cordova-plugin-console": "~1.0.7",
-        "cordova-plugin-crosswalk-webview": "^2.2.0",
         "cordova-plugin-device": "~1.1.6",
         "cordova-plugin-screen-orientation": "^2.0.1",
         "cordova-plugin-splashscreen": "~4.0.3",
@@ -71,14 +70,7 @@
             "cordova-plugin-statusbar": {},
             "cordova-plugin-whitelist": {},
             "ionic-plugin-keyboard": {},
-            "cordova-plugin-screen-orientation": {},
-            "cordova-plugin-crosswalk-webview": {
-                "XWALK_VERSION": "22+",
-                "XWALK_LITEVERSION": "xwalk_core_library_canary:17+",
-                "XWALK_COMMANDLINE": "--disable-pull-to-refresh-effect",
-                "XWALK_MODE": "embedded",
-                "XWALK_MULTIPLEAPK": "true"
-            }
+            "cordova-plugin-screen-orientation": {}
         },
         "platforms": [
             "android",
