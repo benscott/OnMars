@@ -8,21 +8,19 @@
         this.slides = document.getElementsByClassName("slide");
         this.camera = document.querySelector('a-entity[camera]');
         this.lookControls = this.camera.components['look-controls'];
-        // On mobile, only bind after a user has entered VR
-        if(AFRAME.utils.device.isMobile()){
-          document.querySelector('a-scene').addEventListener('enter-vr', function () {
-             this.bindMethods();
-          }.bind(this));      
-        }else{
-          this.bindMethods();
-        }
+        this.bindMethods();
       },
 
       bindMethods: function (){
         this.el.addEventListener(this.data.on, this.next.bind(this));
       },
 
-      next: function (){
+      next: function (event){
+        // If the click event originated from clicking the VR button, 
+        // do not navigate to the next slide - return false
+        if(event.target.className.indexOf('a-enter-vr-button') !== -1){
+          return false;
+        }
         // TODO: Prevent click while loading
         var maxYaw, maxPitch, i = this.getVisibleIndex();
         this.slides[i].setAttribute('visible', false);
